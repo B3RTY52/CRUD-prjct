@@ -17,6 +17,12 @@ class EmployeesAddForm extends Component {
         })
     }
 
+    onAdd = () => {
+        document.querySelector('.add-form').addEventListener('submit', (e) => {
+
+        });
+    }
+
     render() {
         const { name, salary } = this.state;
         return (
