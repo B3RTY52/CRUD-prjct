@@ -38,10 +38,14 @@ class App extends Component {
     }
 
     addEmployee = (elem) => {
-        return {
-            data: data.push(elem)
-        }
+        this.setState(({ data }) => {
+            return {
+                data: data.push(elem)
+            }
+        })
     }
+
+
 
     render() {
         return (

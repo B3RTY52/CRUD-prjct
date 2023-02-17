@@ -18,9 +18,7 @@ class EmployeesAddForm extends Component {
     }
 
     onAdd = () => {
-        document.querySelector('.add-form').addEventListener('submit', (e) => {
 
-        });
     }
 
     render() {
@@ -49,7 +47,8 @@ class EmployeesAddForm extends Component {
 
                     <button
                         type="submit"
-                        className="btn btn-outline-light">Добавить</button>
+                        className="btn btn-outline-light"
+                        onSubmit>Добавить</button>
                 </form>
             </div>
         )
