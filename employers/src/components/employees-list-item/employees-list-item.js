@@ -23,7 +23,7 @@ class EmployeesListItem extends Component {
     }
 
     render() {
-        const { name, salary, onDelete } = this.props;
+        const { name, salary, onDelete, onToggleIncrease, onToggleRise } = this.props;
         const { increase, rise } = this.state;
 
         let classNames = "list-group-item d-flex justify-content-between";
