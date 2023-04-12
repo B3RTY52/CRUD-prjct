@@ -14,9 +14,9 @@ class App extends Component {
         super(props)
         this.state = {
             data: [
-                { name: "John K.", salary: 800, increase: false, id: 1 },
-                { name: "Alex M.", salary: 1200, increase: true, id: 2 },
-                { name: "Ivan I.", salary: 1800, increase: false, id: 3 }
+                { name: "John K.", salary: 800, increase: false, rise: true, id: 1 },
+                { name: "Alex M.", salary: 1200, increase: true, rise: false, id: 2 },
+                { name: "Ivan I.", salary: 1800, increase: false, rise: false, id: 3 }
             ]
         }
         this.maxID = 4;
