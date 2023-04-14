@@ -39,17 +39,18 @@ class App extends Component {
     }
 
     onAdd = (name, salary) => {
-        const newArr = [
-            {
-                name: name,
-                salary: salary,
-                increase: false,
-                id: this.maxID++
-            }
-        ];
+        const newItem = {
+            name: name,
+            salary: salary,
+            increase: false,
+            rise: false,
+            id: this.maxID++
+        }
+
         this.setState(({ data }) => {
+            const newArr = [...data, newItem];
             return {
-                data: [...data, ...newArr]
+                data: newArr
             }
         })
     }
