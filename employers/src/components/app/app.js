@@ -56,7 +56,9 @@ class App extends Component {
     }
 
     onToggleIncrease = (id) => {
-        console.log(`increase this ${id}`);
+        this.setState(({ data }) => {
+            const index = data.findIndex(elem => elem.id === id);
+        })
     }
 
     onToggleRise = (id) => {
