@@ -42,7 +42,8 @@ const EmployeesListItem = (props) => {
             <input type="text"
                 className="list-group-item-input"
                 defaultValue={salary + '$'} />
-            <div className='d-flex justify-content-center align-items-center'>
+            <div className="d-flex justify-content-center 
+                            align-items-center">
                 <button type="button"
                     className="btn-cookie btn-sm"
                     onClick={onToggleIncrease}>
