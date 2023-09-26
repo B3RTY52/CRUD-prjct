@@ -40,7 +40,7 @@ class EmployeesAddForm extends Component {
                         placeholder="Как его зовут?"
                         name='name'
                         //контролируемый элемент:
-                        value={name} //обязательно записывать атрибуть VALUE
+                        value={name} //обязательно записывать атрибут VALUE
                         onChange={this.onValueChange} />
                     <input
                         type="number"
@@ -48,7 +48,7 @@ class EmployeesAddForm extends Component {
                         className="form-control new-post-label"
                         name='salary'
                         //контролируемый элемент:
-                        value={salary} //обязательно записывать атрибуть VALUE
+                        value={salary} //обязательно записывать атрибут VALUE
                         onChange={this.onValueChange} />
 
                     <button
