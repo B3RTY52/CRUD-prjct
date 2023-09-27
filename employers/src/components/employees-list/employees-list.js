@@ -9,7 +9,8 @@ const EmployeesList = ({ data, onDelete, onToggleIncrease, onToggleRise }) => {
         // остальных пропсов, оставляя их в item, а его вынося.
         const { id, ...itemProps } = item;
         return (
-            <EmployeesListItem key={id}
+            <EmployeesListItem
+                key={id}
                 {...itemProps}
                 onDelete={() => onDelete(id)}
                 onToggleIncrease={() => onToggleIncrease(id)}
