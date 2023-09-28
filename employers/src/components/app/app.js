@@ -20,6 +20,7 @@ class App extends Component {
             ]
         }
         this.maxID = 4;
+        this.number = 0;
     }
 
     deleteItem = (id) => {
@@ -86,7 +87,7 @@ class App extends Component {
     render() {
         return (
             <div className="app">
-                <AppInfo />
+                <AppInfo counter={this.number} />
 
                 <div className="search-panel">
                     <SearchPanel />
