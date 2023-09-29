@@ -19,11 +19,22 @@ class EmployeesAddForm extends Component {
 
     onSubmit = (el) => {
         el.preventDefault();
-        this.props.onAdd(this.state.name, this.state.salary);
-        this.setState({
-            name: '',
-            salary: ''
-        })
+
+        const { name, salary } = this.state;
+
+        // Проверяем, что длина введенных значений name и salary больше или равна 3
+        if (name.length >= 3 && salary.length >= 3) {
+            this.props.onAdd(name, salary);
+
+            // Очищаем инпуты после добавления элемента
+            this.setState({
+                name: '',
+                salary: ''
+            });
+        } else {
+            // Выводим сообщение об ошибке в alert
+            alert('Введите не менее трех символов в каждое поле!');
+        }
     }
 
     render() {
