@@ -18,9 +18,11 @@ class App extends Component {
                 { name: "Alex M.", salary: 1200, increase: true, rise: false, id: 2 },
                 { name: "Ivan I.", salary: 1800, increase: false, rise: false, id: 3 }
             ],
-            term: ''
+            term: '',
+            filter: []
         }
         this.maxID = 4;
+        this.state.filter = this.state.data;
     }
 
     deleteItem = (id) => {
@@ -101,16 +103,35 @@ class App extends Component {
         })
     }
 
+
     onUpdateSearch = (term) => {
         // сокращение от "term: term":
         this.setState({ term });
     }
 
+    filterEmp = (type) => {
+        // const mainData = this.state.data;
+
+        if (type === 'all') {
+            this.setState({ filter: this.state.data });
+        }
+        if (type === 'rise') {
+            this.setState({ filter: this.state.data.filter(emp => emp.rise) });
+        }
+        if (type === 'salary') {
+            this.setState({ filter: this.state.data.filter(emp => emp.salary > 1000) });
+        }
+    }
+
     render() {
-        const { data, term } = this.state;
-        const employees = this.state.data.length;
-        const increased = this.state.data.filter(item => item.increase).length;
-        const visibleData = this.searchEmp(data, term);
+        const { data, term, filter } = this.state;
+        const employees = data.length;
+        const increased = data.filter(item => item.increase).length;
+        let visibleData = filter;
+
+        if (this.state.term) {
+            visibleData = this.searchEmp(data, term);
+        }
 
         return (
             <div className="app">
@@ -120,7 +141,7 @@ class App extends Component {
 
                 <div className="search-panel">
                     <SearchPanel onUpdateSearch={this.onUpdateSearch} />
-                    <AppFilter />
+                    <AppFilter filterEmp={this.filterEmp} />
                 </div>
 
                 <EmployeesList
